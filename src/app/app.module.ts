@@ -1,18 +1,24 @@
-import { NgModule } from '@angular/core';
+import { MbscModule } from '@mobiscroll/angular';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
+import { AppService } from './app.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    MbscModule,
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [AppService, BsModalService]
 })
 export class AppModule { }
